@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= memo.title %></title>
+  </head>
+  <body>
+    <h1><%= memo.title %></h1>
+    <ul>
+      <li>Memo: <%= memo.text %></li>
+      <li>
+        Category:
+        <a href="/memos?category=<%= memo.category %>"><%= memo.category %></a>
+      </li>
+    </ul>
+    <a href="/memos">All Memos</a>
+    <a href="/memos/<%= memo._id %>/edit">Edit Memo</a>
+    <form action="/memos/<%= memo._id %>?_method=delete" method="post">
+      <button>Delete</button>
+    </form>
+  </body>
+</html>
